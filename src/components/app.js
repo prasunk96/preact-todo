@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import { Provider } from 'react-redux';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './header';
 

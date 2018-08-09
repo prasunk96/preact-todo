@@ -13,7 +13,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div class={style.home}>
+      <div class="container">
         {
           this.props.notes.map(item => (
             <p>{item.text}</p>
