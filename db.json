@@ -1,0 +1,24 @@
+{
+  "notes": [
+    {
+      "text":"Eggs",
+      "checked": false,
+      "priority": "Low"
+    },
+    {
+      "text":"Beer",
+      "checked": false,
+      "priority": "Low"
+    },
+    {
+      "text":"Peanut butter",
+      "checked": false,
+      "priority": "Low"
+    },
+    {
+      "text":"Veggies",
+      "checked": false,
+      "priority": "Low"
+    }
+  ]
+}
