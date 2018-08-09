@@ -1,11 +1,39 @@
-import { h } from 'preact';
+import { h, Component } from 'preact';
+import {connect} from 'react-redux';
 import style from './style';
 
-const Home = () => (
-	<div class={style.home}>
-		<h1>Home</h1>
-		<p>This is the Home component.</p>
-	</div>
-);
+import * as NotesActions from '../../actions/NotesActions';
+import { getNotes } from './../../actions/NotesActions';
 
-export default Home;
+class Home extends Component {
+
+  componentDidMount() {
+    this.props.getNotes();
+  }
+
+  render() {
+    return (
+      <div class={style.home}>
+        {
+          this.props.notes.map(item => (
+            <p>{item.text}</p>
+          ))
+        }
+      </div>
+    );
+  }
+  };
+
+const mapStateToProps = state => {
+  return {
+    notes: state.notes
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getNotes: () => dispatch(NotesActions.getNotes())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
