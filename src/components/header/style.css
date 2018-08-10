@@ -34,7 +34,8 @@
 	background: rgba(255,255,255,0);
 	text-decoration: none;
 	color: #FFF;
-	will-change: background-color;
+  will-change: background-color;
+  cursor: pointer;
 }
 
 .header nav a:hover,

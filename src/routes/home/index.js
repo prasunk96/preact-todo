@@ -4,6 +4,7 @@ import style from './style';
 
 import * as NotesActions from '../../actions/NotesActions';
 import { getNotes } from './../../actions/NotesActions';
+import Note from './../note/Note';
 
 class Home extends Component {
 
@@ -14,11 +15,11 @@ class Home extends Component {
   render() {
     return (
       <div class="container">
-        {
-          this.props.notes.map(item => (
-            <p>{item.text}</p>
-          ))
-        }
+        <h3>Notes</h3>
+        <hr />
+        <Note />
+        <h3>Lists</h3>
+        <hr />
       </div>
     );
   }

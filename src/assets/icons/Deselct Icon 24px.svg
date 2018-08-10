@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="JourneyBookLodging1200-Search-results" transform="translate(-353.000000, -224.000000)">
+            <g id="Deselct-Icon-24px" transform="translate(351.000000, 222.000000)">
+                <path d="M12,2 C6.47,2 2,6.47 2,12 C2,17.53 6.47,22 12,22 C17.53,22 22,17.53 22,12 C22,6.47 17.53,2 12,2 L12,2 Z M16,14.872 L14.872,16 L12,13.128 L9.128,16 L8,14.872 L10.872,12 L8,9.128 L9.128,8 L12,10.872 L14.872,8 L16,9.128 L13.128,12 L16,14.872 L16,14.872 Z" id="Shape" fill="#2B333E"></path>
+                <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

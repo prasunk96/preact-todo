@@ -3,7 +3,11 @@ import style from './style';
 
 const Header = () => (
 	<header class={style.header}>
-		<h1>To-Do</h1>
+    <h1>To-Do</h1>
+    <nav>
+      <a>Notes</a>
+      <a>Lists</a>
+    </nav>
 	</header>
 );
 
