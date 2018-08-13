@@ -3,10 +3,12 @@ import style from './style';
 
 const Header = () => (
 	<header class={style.header}>
-    <h1>To-Do</h1>
+    <h1>
+      <a href="/">To-Do</a>
+    </h1>
     <nav>
-      <a>Notes</a>
-      <a>Lists</a>
+      <a href="/notes">Notes</a>
+      <a href="/lists">Lists</a>
     </nav>
 	</header>
 );

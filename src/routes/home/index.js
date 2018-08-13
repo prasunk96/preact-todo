@@ -3,8 +3,7 @@ import {connect} from 'react-redux';
 import style from './style';
 
 import * as NotesActions from '../../actions/NotesActions';
-import { getNotes } from './../../actions/NotesActions';
-import Note from './../note/Note';
+import Note from './../note';
 
 class Home extends Component {
 
@@ -13,11 +12,24 @@ class Home extends Component {
   }
 
   render() {
+    let notesJSX = null;
+    if(this.props.notes) {
+      notesJSX = (
+        this.props.notes.slice(0, 4).map(note => (
+          <div class="col-3">
+            <Note text={note.text} key={note.id}/>
+          </div>
+        ))
+      )
+    }
+    
     return (
-      <div class="container">
+      <div>
         <h3>Notes</h3>
         <hr />
-        <Note />
+        <div class="row">
+          {notesJSX}
+        </div>
         <h3>Lists</h3>
         <hr />
       </div>
