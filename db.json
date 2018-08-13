@@ -1,22 +1,40 @@
 {
   "notes": [
     {
-      "text": "Veggies",
+      "text": "steak",
       "checked": false,
       "priority": "Low",
-      "id": 0
+      "id": 1
     },
     {
-      "text": "cheese",
+      "text": "veggies",
       "checked": false,
       "priority": "Low",
       "id": 2
     },
     {
-      "text": "steak",
+      "text": "bbq sauce",
       "checked": false,
       "priority": "Low",
       "id": 3
+    },
+    {
+      "text": "salad",
+      "checked": false,
+      "priority": "Low",
+      "id": 4
+    },
+    {
+      "text": "balsamiq",
+      "checked": false,
+      "priority": "Low",
+      "id": 5
+    },
+    {
+      "text": "beer",
+      "checked": false,
+      "priority": "Low",
+      "id": 6
     }
   ]
 }

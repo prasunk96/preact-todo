@@ -7,7 +7,6 @@ import style from './style';
 import * as ACTIONS from '../../constants/Actions';
 import * as NotesActions from '../../actions/NotesActions';
 
-import { MARK_AS_DONE, TOGGLE_CHECKED } from './../../constants/Actions';
 class Note extends Component {
 
   getTickClasses(...args) {
@@ -18,7 +17,7 @@ class Note extends Component {
 
   statusClickHandler = (info) => {
     info.checked = !info.checked;
-    this.props.toggleChecked(info);
+    this.props.setChecked(info);
   }
   deleteClickHandler = (id) => {
     this.props.deleteNote(id);
@@ -43,7 +42,7 @@ class Note extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    toggleChecked: (value) => dispatch(NotesActions.toggleChecked(value)),
+    setChecked: (value) => dispatch(NotesActions.setChecked(value)),
     deleteNote: (value) => dispatch(NotesActions.deleteNote(value))
   }
 }

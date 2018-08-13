@@ -15,9 +15,7 @@ import * as NotesActions from '../../actions/NotesActions';
   }
 
   noteTextChangeHandler = (event) => {
-    console.log(event.target.value);
-    console.log(event.keyCode);
-    if(event.keyCode === 13) {
+    if(event.keyCode === 13 && event.target.value) {
       let noteToAdd = {
         "text": event.target.value,
         "checked": false,
@@ -42,7 +40,7 @@ import * as NotesActions from '../../actions/NotesActions';
        <div>
         <div class="row">
           <div class="col-8 offset-2">
-            <input type="text" class={style.shadow_input} value="" onKeyUp={event => this.noteTextChangeHandler(event)} placeholder="Type and hit enter to add note" />
+            <input type="text" class={style.shadow_input} value="" onKeyUp={event => this.noteTextChangeHandler(event)} placeholder="Type something and hit enter to add note" />
           </div>
         </div>
         <div class="row m-t-30">

@@ -1,7 +1,5 @@
 import * as ACTIONS from '../constants/Actions';
-import {
-  ADD_NOTE
-} from './../constants/Actions';
+import * as NOTES_HELPER from '../helpers/NotesHelper';
 
 const initState = {
   notes: []
@@ -9,14 +7,10 @@ const initState = {
 
 const reducer = (state = initState, action) => {
   let stateClone = null;
-  let notesClone = null;
-
-  let indexToUpdate = null;
-  let noteToUpdate = null;
 
   switch (action.type) {
     case ACTIONS.GET_NOTES:
-
+      stateClone = JSON.parse(JSON.stringify(state));
       return { ...state,
         notes: action.payload
       };
@@ -26,26 +20,16 @@ const reducer = (state = initState, action) => {
       return { ...stateClone,
         notes: stateClone.notes
       };
-    case ACTIONS.TOGGLE_CHECKED:
+    case ACTIONS.SET_CHECKED:
       stateClone = JSON.parse(JSON.stringify(state));
-      
-      indexToUpdate = stateClone.notes.findIndex((item, index) => {
-        return item.id === action.payload.id
-      });
-      noteToUpdate = { ...stateClone.notes[indexToUpdate]
-      };
-      noteToUpdate.checked = action.payload.checked;
-      stateClone.notes[indexToUpdate] = noteToUpdate;
-      
-      return { ...stateClone,
+      stateClone.notes = NOTES_HELPER.setCheckedStatusById(action.payload, stateClone.notes);
+      return { 
+        ...stateClone,
         notes: stateClone.notes
       }
       case ACTIONS.DELETE_NOTE:
       stateClone = JSON.parse(JSON.stringify(state));
-      indexToUpdate = stateClone.notes.findIndex((item, index) => {
-        return item.id === action.payload
-      });
-      stateClone.notes.splice(indexToUpdate, 1);
+      stateClone.notes = NOTES_HELPER.deleteNoteById(action.payload, stateClone.notes);
       return { ...stateClone,
         notes: stateClone.notes
       }

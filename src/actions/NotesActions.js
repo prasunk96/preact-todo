@@ -1,7 +1,6 @@
 import * as ENDPOINTS from '../constants/Endpoints';
 import * as ACTIONS from '../constants/Actions';
 import axios from 'axios';
-import { ADD_NOTE, GET_NOTES } from './../constants/Actions';
 
 
 export const getNotes = () => {
@@ -30,12 +29,12 @@ export const addNote = (note) => {
   }
 }
 
-export const toggleChecked = (data) => {
+export const setChecked = (data) => {
   return (dispatch, getState) => {
     axios.put(ENDPOINTS.BASE_URL + ENDPOINTS.NOTES + data.id, data)
     .then(response => {
       dispatch({
-        type: ACTIONS.TOGGLE_CHECKED,
+        type: ACTIONS.SET_CHECKED,
         payload: response.data
       });
     })
