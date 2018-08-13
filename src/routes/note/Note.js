@@ -20,6 +20,9 @@ class Note extends Component {
     info.checked = !info.checked;
     this.props.toggleChecked(info);
   }
+  deleteClickHandler = (id) => {
+    this.props.deleteNote(id);
+  }
   render() {
     let textDecoration = {
       'text-decoration': this.props.info.checked ? 'line-through' : 'none'
@@ -30,7 +33,7 @@ class Note extends Component {
           <span style={textDecoration}>{this.props.info.text}</span>
         </div>
         <div class={style.note_actions}>
-          <span title="Delete note" className={[style.delete_icon, "float-left"].join(' ')}></span>
+          <span title="Delete note" className={[style.delete_icon, "float-left"].join(' ')} onClick={() => this.deleteClickHandler(this.props.info.id)}></span>
           <span title="Mark as done" className={this.getTickClasses("float-right")} onClick={() => this.statusClickHandler(this.props.info)}></span>
         </div>
       </div>
@@ -40,7 +43,8 @@ class Note extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    toggleChecked: (value) => dispatch(NotesActions.toggleChecked(value))
+    toggleChecked: (value) => dispatch(NotesActions.toggleChecked(value)),
+    deleteNote: (value) => dispatch(NotesActions.deleteNote(value))
   }
 }
 

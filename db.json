@@ -7,40 +7,16 @@
       "id": 0
     },
     {
-      "text": "Mayo",
-      "checked": false,
-      "priority": "Low",
-      "id": 1
-    },
-    {
-      "text": "BBQ Sauce",
+      "text": "cheese",
       "checked": false,
       "priority": "Low",
       "id": 2
     },
     {
-      "text": "Bacon",
-      "checked": true,
-      "priority": "Low",
-      "id": 3
-    },
-    {
-      "text": "Balsamiq",
-      "checked": false,
-      "priority": "Low",
-      "id": 4
-    },
-    {
-      "text": "cheese",
-      "checked": false,
-      "priority": "Low",
-      "id": 5
-    },
-    {
       "text": "steak",
       "checked": false,
       "priority": "Low",
-      "id": 6
+      "id": 3
     }
   ]
 }
