@@ -1,5 +1,4 @@
 .header {
-	position: fixed;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -20,6 +19,11 @@
 	color: #FFF;
 }
 
+.header h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .header nav {
 	float: right;
 	font-size: 100%;
@@ -35,7 +39,8 @@
 	background: rgba(255,255,255,0);
 	text-decoration: none;
 	color: #FFF;
-	will-change: background-color;
+  will-change: background-color;
+  cursor: pointer;
 }
 
 .header nav a:hover,

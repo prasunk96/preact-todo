@@ -1,0 +1,56 @@
+.note_container {
+  height: 180px;
+  width: 100%;
+  background-color: #c7caed;
+  box-shadow: 5px 5px 5px #eee;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.note_content {
+  padding: 15px;
+  height: 140px;
+}
+
+.note_actions {
+  padding: 10px 15px;
+  background-color: #ffffff;
+  height: 40px;
+  color: #a2a2a2;
+}
+
+.delete_icon {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-image: url('../../assets/icons/Deselct Icon 24px.svg');
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.tick_dark_icon {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-image: url('../../assets/icons/tick-filled-dark.svg');
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.tick_light_icon {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-image: url('../../assets/icons/tick-filled-light.svg');
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+}
