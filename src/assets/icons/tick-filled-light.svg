@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Journey-Book-EC---Add-traveller" transform="translate(-397.000000, -197.000000)">
+            <g id="Deselct-Icon-24px" transform="translate(397.000000, 197.000000)">
+                <path d="M16,32 C24.836556,32 32,24.836556 32,16 C32,7.163444 24.836556,0 16,0 C7.163444,0 0,7.163444 0,16 C0,24.836556 7.163444,32 16,32 Z" id="Oval-9-Copy-35" fill="#D4D6DA"></path>
+                <polygon id="Shape" fill="#FFFFFF" points="20.4347826 12.076087 22 13.6413043 14.706087 20.9456522 10 16.25 11.5652174 14.6847826 14.706087 17.8152174"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

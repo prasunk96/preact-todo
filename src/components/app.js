@@ -6,8 +6,8 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Header from './header';
 
 // Code-splitting is automated for routes
-import Home from '../routes/home';
-import Notes from '../routes/notes';
+import Home from '../routes/home/Home';
+import Notes from '../routes/notes/Notes';
 import store from './../store/Store';
 
 export default class App extends Component {

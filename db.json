@@ -1,31 +1,31 @@
 {
   "notes": [
     {
-      "id": 0,
-      "text": "Eggs",
-      "checked": false,
-      "priority": "Low"
-    },
-    {
-      "id": 1,
-      "text": "Beer",
-      "checked": false,
-      "priority": "Low"
-    },
-    {
-      "id": 2,
-      "text": "Peanut butter",
-      "checked": false,
-      "priority": "Low"
-    },
-    {
-      "id": 3,
       "text": "Veggies",
       "checked": false,
-      "priority": "Low"
+      "priority": "Low",
+      "id": 0
     },
     {
-      "text": "burger",
+      "text": "Mayo",
+      "checked": false,
+      "priority": "Low",
+      "id": 1
+    },
+    {
+      "text": "BBQ Sauce",
+      "checked": false,
+      "priority": "Low",
+      "id": 2
+    },
+    {
+      "text": "Bacon",
+      "checked": true,
+      "priority": "Low",
+      "id": 3
+    },
+    {
+      "text": "Balsamiq",
       "checked": false,
       "priority": "Low",
       "id": 4

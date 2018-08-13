@@ -29,3 +29,16 @@ export const addNote = (note) => {
     .catch(error => console.log("HTTP call to post note is failed."))
   }
 }
+
+export const toggleChecked = (data) => {
+  return (dispatch, getState) => [
+    axios.put(ENDPOINTS.BASE_URL + ENDPOINTS.NOTES + '/' + data.id, data)
+    .then(response => {
+      dispatch({
+        type: ACTIONS.TOGGLE_CHECKED,
+        payload: response.data
+      });
+    })
+    .catch(error => console.log("HTTP call to put note is failed."))
+  ]
+} 

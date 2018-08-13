@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import style from './style';
 
 import * as NotesActions from '../../actions/NotesActions';
-import Note from './../note';
+import Note from './../note/Note';
 
 class Home extends Component {
 
@@ -17,7 +17,7 @@ class Home extends Component {
       notesJSX = (
         this.props.notes.slice(0, 4).map(note => (
           <div class="col-3">
-            <Note text={note.text} key={note.id}/>
+            <Note info={note} />
           </div>
         ))
       )

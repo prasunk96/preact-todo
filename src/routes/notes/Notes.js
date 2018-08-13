@@ -2,7 +2,7 @@ import { Component } from 'preact';
 import { connect } from 'react-redux';
 
 import style from './style';
-import Note from './../note';
+import Note from './../note/Note';
 import * as NotesActions from '../../actions/NotesActions';
 
 
@@ -33,7 +33,7 @@ import * as NotesActions from '../../actions/NotesActions';
        notesJSX = (
          this.props.notes.map(note => (
            <div class="col-3">
-             <Note text={note.text} key={note.id} />
+             <Note info={note} />
            </div>
          ))
        )
