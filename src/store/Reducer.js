@@ -1,24 +1,29 @@
 import * as ACTIONS from '../constants/Actions';
 import * as NOTES_HELPER from '../helpers/NotesHelper';
+import { Map, JS, List, fromJS } from 'immutable';
 
-const initState = {
-  notes: []
-};
+const initState = Map({
+  notes: List()
+});
 
 const reducer = (state = initState, action) => {
   let stateClone = null;
+  let notes = null;
 
   switch (action.type) {
     case ACTIONS.GET_NOTES:
-      stateClone = JSON.parse(JSON.stringify(state));
-      return { ...state,
-        notes: action.payload
-      };
+      notes = fromJS(action.payload);
+    return { ...state,
+      notes: notes
+    };
     case ACTIONS.ADD_NOTE:
+    console.log(state.getIn(['notes']));
       stateClone = JSON.parse(JSON.stringify(state));
+      notes = state.getIn(['notes']);
+      notes.push(action.payload);
       stateClone.notes.push(action.payload);
       return { ...stateClone,
-        notes: stateClone.notes
+        notes: notes
       };
     case ACTIONS.SET_CHECKED:
       stateClone = JSON.parse(JSON.stringify(state));
