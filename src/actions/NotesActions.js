@@ -12,7 +12,7 @@ export const getNotes = () => {
         payload: response.data 
       });
     })
-    .catch(error => console.log("HTTP call to get note is failed."))
+    .catch(error => console.log(error))
   }
 }
 
@@ -25,7 +25,7 @@ export const addNote = (note) => {
         payload: response.data
       });
     })
-    .catch(error => console.log("HTTP call to post note is failed."))
+    .catch(error => console.log(error))
   }
 }
 
@@ -38,7 +38,7 @@ export const setChecked = (data) => {
         payload: response.data
       });
     })
-    .catch(error => console.log("HTTP call to put note is failed."))
+    .catch(error => console.log(error))
   }
 }
 
@@ -51,6 +51,6 @@ export const deleteNote = (id) => {
           payload: id
         });
       })
-      .catch(error => console.log("HTTP call to put note is failed."))
+      .catch(error => console.log(error))
   }
 }
