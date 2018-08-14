@@ -1,40 +1,58 @@
 {
   "notes": [
     {
-      "text": "steak",
+      "text": "Veggies",
       "checked": false,
       "priority": "Low",
       "id": 1
     },
     {
-      "text": "veggies",
+      "text": "Mayo",
       "checked": false,
       "priority": "Low",
       "id": 2
     },
     {
-      "text": "bbq sauce",
-      "checked": false,
+      "text": "Salad",
+      "checked": true,
       "priority": "Low",
       "id": 3
     },
     {
-      "text": "salad",
+      "text": "BBQ sauce",
       "checked": false,
       "priority": "Low",
       "id": 4
     },
     {
-      "text": "balsamiq",
+      "text": "Steak",
       "checked": false,
       "priority": "Low",
       "id": 5
     },
     {
-      "text": "beer",
+      "text": "Cheese",
       "checked": false,
       "priority": "Low",
       "id": 6
+    },
+    {
+      "text": "Eggs",
+      "checked": false,
+      "priority": "Low",
+      "id": 7
+    },
+    {
+      "text": "Beer",
+      "checked": false,
+      "priority": "Low",
+      "id": 8
+    },
+    {
+      "text": "Coal",
+      "checked": false,
+      "priority": "Low",
+      "id": 9
     }
   ]
 }

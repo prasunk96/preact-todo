@@ -1,39 +1,40 @@
 import * as ACTIONS from '../constants/Actions';
-import * as NOTES_HELPER from '../helpers/NotesHelper';
+import {
+  Map,
+  List,
+  fromJS,
+  toJS
+} from 'immutable';
 
-const initState = {
-  notes: []
-};
+const initState = Map({
+  notes: List()
+});
 
 const reducer = (state = initState, action) => {
   let stateClone = null;
+  let newState = null;
+  let newNotes = null;
+  let _notes = null;
+  let index = null;
 
   switch (action.type) {
     case ACTIONS.GET_NOTES:
-      stateClone = JSON.parse(JSON.stringify(state));
-      return { ...state,
-        notes: action.payload
-      };
+      _notes = fromJS(action.payload);
+      newState = state.set('notes', _notes);
+      return newState;
     case ACTIONS.ADD_NOTE:
-      stateClone = JSON.parse(JSON.stringify(state));
-      stateClone.notes.push(action.payload);
-      return { ...stateClone,
-        notes: stateClone.notes
-      };
+      newState = state.update('notes', arr => arr.push(action.payload));
+      return newState;
     case ACTIONS.SET_CHECKED:
-      stateClone = JSON.parse(JSON.stringify(state));
-      stateClone.notes = NOTES_HELPER.setCheckedStatusById(action.payload, stateClone.notes);
-      return { 
-        ...stateClone,
-        notes: stateClone.notes
-      }
-      case ACTIONS.DELETE_NOTE:
-      stateClone = JSON.parse(JSON.stringify(state));
-      stateClone.notes = NOTES_HELPER.deleteNoteById(action.payload, stateClone.notes);
-      return { ...stateClone,
-        notes: stateClone.notes
-      }
-      
+      newState = state.updateIn(['notes'], list => {
+        index = list.findIndex(itemToUpdate => itemToUpdate.get('id') === action.payload.id);
+        return list.setIn([index, 'checked'], action.payload.checked);
+      })
+      return newState;
+    case ACTIONS.DELETE_NOTE:
+      index = state.get('notes').findIndex(itemToDelete => itemToDelete.get('id') === action.payload);
+      newState = state.deleteIn(['notes', index]);
+      return newState;
     default:
       return state;
   }
