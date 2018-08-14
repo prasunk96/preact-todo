@@ -1,6 +1,8 @@
 import { h, Component } from 'preact';
 import {connect} from 'react-redux';
 import style from './style';
+import { toJS } from 'immutable';
+
 
 import * as NotesActions from '../../actions/NotesActions';
 import Note from './../note/Note';
@@ -39,7 +41,7 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   return {
-    notes: state.notes
+    notes: state.get('notes').toJS()
   }
 }
 
