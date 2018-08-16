@@ -1,6 +1,8 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import { Provider } from 'react-redux';
+import ApolloClient from "apollo-boost";
+import { ApolloProvider, Query } from "react-apollo";
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './header';
@@ -9,6 +11,12 @@ import Header from './header';
 import Home from '../routes/home/Home';
 import Notes from '../routes/notes/Notes';
 import store from './../store/Store';
+
+
+const client = new ApolloClient({
+  uri: "http://localhost:3100/graphql"
+});
+
 
 export default class App extends Component {
 	
@@ -22,17 +30,19 @@ export default class App extends Component {
 
 	render() {
 		return (
-      <Provider store={store}>
-        <div id="app">
-          <Header />
-          <div class="container content">
-          <Router onChange={this.handleRoute}>
-            <Home path="/" />
-            <Notes path="/notes" />
-          </Router>
+      <ApolloProvider client={client}>
+        <Provider store={store}>
+          <div id="app">
+            <Header />
+            <div class="container content">
+            <Router onChange={this.handleRoute}>
+              <Home path="/" />
+              <Notes path="/notes" />
+            </Router>
+            </div>
           </div>
-        </div>
-      </Provider>
+        </Provider>
+      </ApolloProvider>
 		);
 	}
 }
