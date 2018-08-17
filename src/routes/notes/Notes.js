@@ -23,7 +23,7 @@ import NoteInputWithMutation from './../../components/note-input/NoteInput';
                <div class="row m-t-30">
                  {
                    data.allNotes.map(note => (
-                     <div class="col-3" key={note.id}>
+                     <div class="col-12 col-sm-6 col-md-3" key={note.id}>
                        <Note info={note} />
                      </div>
                    )
@@ -38,7 +38,7 @@ import NoteInputWithMutation from './../../components/note-input/NoteInput';
      return (
        <div>
         <div class="row">
-          <div class="col-8 offset-2">
+          <div class="col-12">
             <NoteInputWithMutation />
           </div>
         </div>
