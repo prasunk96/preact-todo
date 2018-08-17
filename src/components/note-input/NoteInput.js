@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 
 import style from './style';
 import * as NOTES_QUERY from '../../graphql/queries/NoteQueries';
+import * as NOTES_MUTATION from '../../graphql/mutations/NoteMutations';
 
 
 const NoteInput = ({ mutate }) => {
@@ -30,17 +31,7 @@ const NoteInput = ({ mutate }) => {
   );
 };
 
-const createNoteMutation = gql`
-  mutation createNote($text: String, $priority: String, $checked: Boolean) {
-    createNote(text: $text, priority: $priority, checked: $checked) {
-      text
-      priority
-      checked
-    }
-  }
-`;
-
 const NoteInputWithMutation = graphql(
-  createNoteMutation
+  NOTES_MUTATION.CREATE_NOTE
 )(NoteInput);
 export default NoteInputWithMutation;
