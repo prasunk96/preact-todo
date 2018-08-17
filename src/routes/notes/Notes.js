@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 import { toJS } from 'immutable';
 
 
-import style from './style';
 import Note from './../note/Note';
 import * as NotesActions from '../../actions/NotesActions';
+import * as NOTES_QUERY from '../../graphql/queries/NoteQueries';
+import { Query } from 'react-apollo';
+import NoteInputWithMutation from './../../components/note-input/NoteInput';
+
 
 
  class Notes extends Component {
@@ -29,20 +32,34 @@ import * as NotesActions from '../../actions/NotesActions';
 
    render() {
      let notesJSX = null;
-     if (this.props.notes) {
-       notesJSX = (
-         this.props.notes.map(note => (
-           <div class="col-3">
-             <Note info={note} />
-           </div>
-         ))
-       )
-     }
+     notesJSX = (
+       <Query query={NOTES_QUERY.ALL_NOTES}>
+         {
+           ({ loading, error, data }) => {
+             if (loading) return <h4 class="text-muted text-center">Loading notes...</h4>;
+             if (error) return <h4 class="text-muted text-center">Error loading notes</h4>;
+
+             return (
+               <div class="row">
+                 {
+                   data.allNotes.map(note => (
+                     <div class="col-3">
+                       <Note info={note} />
+                     </div>
+                   )
+                   )
+                 }
+               </div>
+             )
+           }
+         }
+       </Query>
+     );
      return (
        <div>
         <div class="row">
           <div class="col-8 offset-2">
-            <input type="text" class={style.shadow_input} value="" onKeyUp={event => this.noteTextChangeHandler(event)} placeholder="Type something and hit enter to add note" />
+            <NoteInputWithMutation />
           </div>
         </div>
         <div class="row m-t-30">

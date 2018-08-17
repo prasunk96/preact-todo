@@ -2,21 +2,9 @@ import { h, Component } from 'preact';
 import {connect} from 'react-redux';
 import style from './style';
 import { Query } from "react-apollo";
-import gql from "graphql-tag";
-
 import { toJS } from 'immutable';
 
-const QUERY_NOTES = gql`
-  {
-    allNotes {
-      id
-      text
-      checked
-      priority
-    }
-  }
-`;
-
+import * as NOTES_QUERY from '../../graphql/queries/NoteQueries';
 import * as NotesActions from '../../actions/NotesActions';
 import Note from './../note/Note';
 
@@ -28,37 +16,12 @@ class Home extends Component {
 
   render() {
     let notesJSX = null;
-    // if(this.props.notes) {
-    //   notesJSX = (
-    //     this.props.notes.map(note => (
-    //       <Query query={QUERY_NOTES}>
-    //         {
-    //           ({loading, error, data}) => {
-    //             if(loading) return (<h2>Loading notes...</h2>);
-    //             if(error) return (<h2>Error loading notes</h2>);
-
-    //             return (
-    //               <div class="col-3">
-    //                 {
-    //                   data.allNotes.map( note =>
-    //                     <Note info={note}/>
-    //                   )
-    //                 }
-    //               </div>
-    //             )
-    //           }
-    //         }
-    //       </Query>
-    //     ))
-    //   )
-    // }
-
     notesJSX = (
-      <Query query={QUERY_NOTES}>
+      <Query query={NOTES_QUERY.RECENT_NOTES}>
       {
         ({ loading, error, data }) => {
-          if (loading) return <h2>Loading notes...</h2>;
-          if (error) return <h2>Error loading notes</h2>;
+          if (loading) return <h4 class="text-muted text-center">Loading notes...</h4>;
+          if (error) return <h4 class="text-muted text-center">Error loading notes</h4>;
           
           return (              
             <div class="row">
