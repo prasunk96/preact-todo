@@ -40,7 +40,7 @@ import NoteInputWithMutation from './../../components/note-input/NoteInput';
              if (error) return <h4 class="text-muted text-center">Error loading notes</h4>;
 
              return (
-               <div class="row">
+               <div class="row m-t-30">
                  {
                    data.allNotes.map(note => (
                      <div class="col-3">
@@ -62,7 +62,7 @@ import NoteInputWithMutation from './../../components/note-input/NoteInput';
             <NoteInputWithMutation />
           </div>
         </div>
-        <div class="row m-t-30">
+        <div class="">
           {notesJSX}
         </div>
        </div>

@@ -9,3 +9,19 @@ export const CREATE_NOTE = gql`
     }
   }
 `;
+
+export const UPDATE_NOTE = gql`
+  mutation updateNote($id: Int!, $checked: Boolean) {
+    updateNote(id: $id, checked: $checked) {
+      text
+      priority
+      checked
+    }
+  }
+`;
+
+export const DELETE_NOTE = gql`
+  mutation deleteNote($id: Int) {
+    deleteNote(id: $id)
+  }
+`;
