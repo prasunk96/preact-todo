@@ -8,7 +8,6 @@ const Header = () => (
     </h1>
     <nav>
       <a href="/notes">Notes</a>
-      <a href="/lists">Lists</a>
     </nav>
 	</header>
 );

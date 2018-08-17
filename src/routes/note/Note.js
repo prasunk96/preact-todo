@@ -1,12 +1,7 @@
 import { Component } from 'preact';
-import { connect } from 'react-redux';
 import { Mutation } from 'react-apollo';
 
-
-
 import style from './style';
-import * as ACTIONS from '../../constants/Actions';
-import * as NotesActions from '../../actions/NotesActions';
 import * as NOTES_QUERY from '../../graphql/queries/NoteQueries';
 import * as NOTES_MUTATION from '../../graphql/mutations/NoteMutations';
 
@@ -18,16 +13,7 @@ class Note extends Component {
     return args.join(' ');
   }
 
-  statusClickHandler = (info) => {
-    info.checked = !info.checked;
-    this.props.setChecked(info);
-  }
-  deleteClickHandler = (id) => {
-    this.props.deleteNote(id);
-  }
-
   updateHandler = (updateToDo, info) => {
-    console.log(info);
     updateToDo({
       variables: {id: info.id, checked: !info.checked},
       refetchQueries: [{ query: NOTES_QUERY.ALL_NOTES }]
@@ -74,11 +60,4 @@ class Note extends Component {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setChecked: (value) => dispatch(NotesActions.setChecked(value)),
-    deleteNote: (value) => dispatch(NotesActions.deleteNote(value))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(Note);
+export default Note;
